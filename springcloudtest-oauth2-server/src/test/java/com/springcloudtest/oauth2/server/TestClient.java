@@ -28,7 +28,7 @@ public class TestClient {
 	public void testClient() {
 
 		// 此地址就是http://ip:port
-		String uri = "http://192.168.1.9:1501";
+		String uri = "http://127.0.0.1:1501";
 		// 令牌申请的地址 http://localhost:40400/auth/oauth/token
 		String authUrl = uri + "/oauth/token";
 		// 定义header

@@ -1,0 +1,33 @@
+server:
+  port: 1101 
+spring:
+  application:
+    name: api
+  datasource:
+       username: root
+       password: zhd123456
+       driver-class-name: com.mysql.jdbc.Driver
+       url: jdbc:mysql://localhost:3306/cloudauth?serverTimezone=UTC
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: zhd123456
+    timeout: 100
+    
+mybatis:
+    mapper-locations: classpath:com/springcloudtest/api/dao/mapper/*.xml
+    type-aliases-package: com.springcloudtest.api.entity
+        
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://01.server.eureka:1001/eureka/,http://02.server.eureka:1002/eureka/
+      
+logging:
+  file:
+    path: D:/springcloudtest/logs/springcloudtest-api-1101
