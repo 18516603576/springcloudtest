@@ -1,0 +1,35 @@
+server:
+  port: 1401
+spring:
+  application:
+    name: zuul-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/18516603576/zuul-config
+          username: 18516603576
+          password: Zhd123456
+          basedir: D:\github\zuul-config
+  rabbitmq:
+    host: 127.0.0.1
+    username: guest
+    password: guest
+    port: 5672
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+eureka:
+  client:
+    service-url:
+      defaultZone: http://01.server.eureka:1001/eureka/,http://02.server.eureka:1002/eureka/
+
+logging:
+  file:
+    path: D:/springcloudtest/logs/springcloudtest-zuul-config-server-1201
+#http://localhost:1401/actuator/bus-refresh

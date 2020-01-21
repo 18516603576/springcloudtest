@@ -1,0 +1,35 @@
+server:
+  port: 1501 
+spring:
+  application:
+    name: oauth2-server
+  profiles:
+      active: ${SPRING_PROFILES_ACTIVE:dev}
+  datasource:
+       username: root
+       password: zhd123456
+       driver-class-name: com.mysql.jdbc.Driver
+       url: jdbc:mysql://localhost:3306/cloudauth?serverTimezone=UTC
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: zhd123456
+    timeout: 100
+    
+mybatis:
+    mapper-locations: classpath:com/springcloudtest/oauth2/server/dao/mapper/*.xml
+    type-aliases-package: com.springcloudtest.oauth2.server.entity
+        
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://01.server.eureka:1001/eureka/,http://02.server.eureka:1002/eureka/
+      
+logging:
+  file:
+    path: D:/springcloudtest/logs/springcloudtest-oauth2-server-1501

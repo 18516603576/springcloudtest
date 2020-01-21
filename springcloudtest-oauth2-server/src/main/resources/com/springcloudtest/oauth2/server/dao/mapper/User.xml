@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springcloudtest.oauth2.server.dao.UserDao" >  
+  <!-- 1、获取用户  -->
+  <select id="getByUsername" parameterType="string" resultType="com.springcloudtest.oauth2.server.entity.User">
+     <include refid="selectFieldSQL" />
+     from user
+     where username=#{username,jdbcType=VARCHAR}
+  </select>  
+    
+	<!-- 查询字段 -->
+	<sql id="selectFieldSQL">
+		SELECT 
+		       ID id,
+		       CREATE_TIME createTime,
+		       UPDATE_TIME updateTime,
+		       EMAIL email,
+		       FIRST_NAME firstName,
+		       IMAGE_URL imageUrl,
+		       LAST_NAME lastName,
+		       PASSWORD password,
+		       USERNAME username
+	</sql>
+	 
+</mapper> 
+ 

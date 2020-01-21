@@ -1,0 +1,36 @@
+server:
+  port: 1201
+spring:
+  application:
+    name: api-zuul
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: zuul-config-server
+      profile: dev
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest    
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: zhd123456
+    timeout: 100  
+      
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://01.server.eureka:1001/eureka/,http://02.server.eureka:1002/eureka/
+      
+logging:
+  file:
+    path: D:/springcloudtest/logs/springcloudtest-zuul-1201
+
